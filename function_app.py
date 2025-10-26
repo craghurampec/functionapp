@@ -7,7 +7,7 @@ from elasticsearch import Elasticsearch, helpers
 app = func.FunctionApp()
 
 @app.blob_trigger(arg_name="myblob", path="raw/oxylabs",
-                               connection="peclaravelstoragedev001_STORAGE")
+                               connection="AzureWebJobsStorage")
 
 def blob_index(blob_name):
     logging.info(f"Indexing blob: {blob_name}")
